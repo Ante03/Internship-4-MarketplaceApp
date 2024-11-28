@@ -11,7 +11,7 @@ namespace Internship_4_MarketplaceApp.Data.Entities.Models
         public double StartingMoney { get; set; }
         public List<Item> History { get; set; } = new List<Item>();
         public List<Item> Favorites { get; set; } = new List<Item>();
-        public Buyer(string name, string surname, string mail, double money) : base(name, surname, mail)
+        public Buyer(string name, string mail, double money) : base(name, mail)
         {
             StartingMoney = money;
         }

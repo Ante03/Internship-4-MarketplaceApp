@@ -10,13 +10,11 @@ namespace Internship_4_MarketplaceApp.Data.Entities.Models
     {
         public Guid Id { get; set; }
         public string UserName { get; set; }
-        public string UserSurname { get; set; }
         public string UserEmail { get; set; }
 
-        public User(string name, string surname, string mail) 
+        public User(string name, string mail) 
         { 
             UserName = name;
-            UserSurname = surname;
             UserEmail = mail;
             Id = Guid.NewGuid();
         }

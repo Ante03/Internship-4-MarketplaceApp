@@ -9,7 +9,7 @@ namespace Internship_4_MarketplaceApp.Data.Entities.Models
     public class Seller : User
     {
         public double Earnings { get; set; }
-        public Seller(string name, string surname, string mail) : base(name, surname, mail)
+        public Seller(string name, string mail) : base(name, mail)
         {
 
         }

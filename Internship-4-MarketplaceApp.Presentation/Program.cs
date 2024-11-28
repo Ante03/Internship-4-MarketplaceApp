@@ -14,9 +14,9 @@ namespace Internship_4_MarketplaceApp.Presentation
     {
         static void Main(string[] args)
         {
-            DbContext context = new DbContext();
+            Marketplace context = new Marketplace();
 
-            MainMenu.showMenu();
+            MainMenu.showMenu(context);
         }
     }
 }
