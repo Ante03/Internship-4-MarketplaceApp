@@ -40,7 +40,7 @@ namespace Internship_4_MarketplaceApp.Data.Seeds
 
         public static readonly List<Coupon> Coupons = new List<Coupon>
             {
-                new Coupon(1111, ItemCategory.Food, new DateTime(2024, 11, 27), Buyers[0])
+                new Coupon(1111, ItemCategory.Food, new DateTime(2023, 11, 27), Buyers[0])
         };
     }
 }

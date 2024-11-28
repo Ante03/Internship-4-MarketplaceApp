@@ -11,6 +11,7 @@ namespace Internship_4_MarketplaceApp.Presentation.Actions.HomePage.Registar
         public static void AddNewUser(Marketplace marketplace)
         {
             Console.Clear();
+            Console.Clear();
             var name = Returners.EnterName(marketplace);
             var mail = Returners.CheckMail(marketplace);
             var moneyOnAccount = Returners.CheckBuyerOrSeller();

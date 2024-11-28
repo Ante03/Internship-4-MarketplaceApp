@@ -10,16 +10,22 @@ namespace Internship_4_MarketplaceApp.Presentation.Actions.HomePage.Login
     {
         public static void LoginInApp(Marketplace marketplace)
         {
+            Console.Clear();
             var user = Returners.CheckMailInUsers(marketplace);
-            if (user == null) {  return; }
+            if (user == null) { return; }
+            var name = Returners.EnterName(marketplace);
 
-            if(user is Buyer)
+            if (user is Buyer && name.ToLower() == user.UserName.ToLower())
             {
                 MenuBuyer.BuyerOptions(marketplace, (Buyer)user);
             }
-            else if(user is Seller)
+            else if (user is Seller)
             {
                 Console.WriteLine("Seellll");
+            }
+            else 
+            {
+                Console.WriteLine("Nismo vas uspjeli naci u sustavu");
             }
         }
     }

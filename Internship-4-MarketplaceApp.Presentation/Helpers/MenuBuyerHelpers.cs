@@ -2,10 +2,7 @@
 using Internship_4_MarketplaceApp.Data.Entities.Models;
 using Internship_4_MarketplaceApp.Domain.Repositorioes;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Internship_4_MarketplaceApp.Presentation.Helpers
 {
@@ -46,23 +43,40 @@ namespace Internship_4_MarketplaceApp.Presentation.Helpers
                     var CodeFromCoupon = Returners.CheckNumber(1000, 9999);
                     foreach (var coupon in marketplace.Coupons)
                     {
-                        if (coupon.CouponCode == CodeFromCoupon)
+                        if (coupon.CouponCode == CodeFromCoupon && applicableCoupon.EndDate > DateTime.Now)
                         {
-                            MenuBuyerFunctions.MakeSale(item, buyer, marketplace, CodeFromCoupon);
-                            Console.WriteLine($"Uspjesno obavljena kupnja proizvoda '{item.Name}'!");
+                            Console.WriteLine("Jeste sigurni da zelite obaviti kupnju: ");
+                            if (Returners.CheckYesOrNo())
+                            {
+                                MenuBuyerFunctions.MakeSale(item, buyer, marketplace, CodeFromCoupon);
+                                Console.WriteLine($"Uspjesno obavljena kupnja proizvoda '{item.Name}'!");
+                                counter++;
+                                break;
+                            }
+                            else
+                            {
+                                Console.WriteLine("Odustali od kupnje");
+                            }
                             counter++;
-                            break;
                         }
                     }
                     if(counter == 0)
                     {
-                        Console.WriteLine("Unijeli ste krivi kod!");
+                        Console.WriteLine("Unijeli ste nevazeci kupon!");
                     }
                 }
                 else
                 {
-                    MenuBuyerFunctions.MakeSale(item, buyer, marketplace);
-                    Console.WriteLine($"Uspjesno obavljena kupnja proizvoda '{item.Name}'!");
+                    Console.WriteLine("Jeste sigurni da zelite obaviti kupnju: ");
+                    if (Returners.CheckYesOrNo())
+                    {
+                        MenuBuyerFunctions.MakeSale(item, buyer, marketplace);
+                        Console.WriteLine($"Uspjesno obavljena kupnja proizvoda '{item.Name}'!");
+                    }
+                    else
+                    {
+                        Console.WriteLine("Odustali od kupnje");
+                    }
                 }  
             }
             else
@@ -95,8 +109,17 @@ namespace Internship_4_MarketplaceApp.Presentation.Helpers
                 Console.WriteLine("Dogodila se greska neuspjesno briasnje!");
                 return;
             }
-            MenuBuyerFunctions.ReturnItem(item, buyer, marketplace, transactionToRemove);
-            Console.WriteLine("Proizvod uspjesno vracen!");
+            Console.WriteLine("Jeste sigurni da zelite vratite proizvod: ");
+            if (Returners.CheckYesOrNo())
+            {
+                MenuBuyerFunctions.ReturnItem(item, buyer, marketplace, transactionToRemove);
+                Console.WriteLine("Proizvod uspjesno vracen!");
+            }
+            else
+            {
+                Console.WriteLine($"Odustali od vracanja {item.Name}");
+            }
+            
         }
 
         public static void AddToFavorites(Item item, Buyer buyer)
@@ -112,8 +135,16 @@ namespace Internship_4_MarketplaceApp.Presentation.Helpers
                 Console.WriteLine($"'{item.Name}' je vec dodano u omiljene!");
                 return;
             }
-            buyer.Favorites.Add(item);
-            Console.WriteLine($"uspjesno dodano u omiljene '{item.Name}'!");
+            Console.WriteLine($"Jeste sigurni da zelite dodati {item.Name} u omiljene!");
+            if (Returners.CheckYesOrNo())
+            {
+                buyer.Favorites.Add(item);
+                Console.WriteLine($"uspjesno dodano u omiljene '{item.Name}'!");
+            }
+            else
+            {
+                Console.WriteLine($"Odustali od dodavanja {item.Name} u omiljene");
+            }
         }
 
         public static void PrintHistoryOfShopping(Buyer buyer)

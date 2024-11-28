@@ -119,7 +119,7 @@ namespace Internship_4_MarketplaceApp.Presentation.Helpers
                     return seller;
                 }
             }
-            Console.WriteLine("Korinsik s tim imenom i mail-om ne postoji!");
+            Console.WriteLine("Korinsik s tim mail-om ne postoji!");
             return null;
         }
         public static string CheckMail(Marketplace marketplace)
@@ -133,6 +133,14 @@ namespace Internship_4_MarketplaceApp.Presentation.Helpers
                 EnternedMail = Console.ReadLine();
             }
             return EnternedMail;
+        }
+        public static bool CheckYesOrNo()
+        {
+            Console.WriteLine("1 - Da \n2 - Ne");
+            var choice = CheckNumber(1, 2);
+            if (choice == 1)
+                return true;
+            return false;
         }
     }
 }

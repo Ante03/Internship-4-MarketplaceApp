@@ -18,6 +18,7 @@ namespace Internship_4_MarketplaceApp.Presentation.Actions.MainMenu.ShowMenu
             var choiceLoginOrRegistar = 0;
             while (choiceLoginOrRegistar != 3)
             {
+                
                 Console.WriteLine("Odaberite: \n1 - Registarcija \n2 - Prijava \n3 - izlaz");
                 var smallestChoice = 1;
                 var biggestChoice = 3;

@@ -13,7 +13,8 @@ namespace Internship_4_MarketplaceApp.Presentation.Actions.MainMenu.ShowMenu
             Console.Clear();
             var choice = -1;
             while (choice != 0) 
-            { 
+            {
+                Console.WriteLine(buyer.StartingMoney);
                 Console.WriteLine("Odaberite:\n1 - Pregled svih artikala\n2 - Napravi kupnju \n3 - Povratak proizvoda \n4 - Dodaj u omiljene \n5 - Prikazi povijest \n6 - Prikazi favorite \n7 - izlaz");
                 choice = Returners.CheckNumber(1, 7);
                 switch (choice) { 
@@ -26,6 +27,7 @@ namespace Internship_4_MarketplaceApp.Presentation.Actions.MainMenu.ShowMenu
                     case 2:
                         {
                             Console.Clear();
+                            MenuBuyerHelpers.ItemForSale(marketplace);
                             var itemToBuy = Returners.FindItemById(marketplace);
                             MenuBuyerHelpers.DoSale(itemToBuy, buyer, marketplace);
                             break;
