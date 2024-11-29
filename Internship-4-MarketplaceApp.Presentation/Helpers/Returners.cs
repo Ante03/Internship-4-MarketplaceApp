@@ -20,6 +20,15 @@ namespace Internship_4_MarketplaceApp.Presentation.Helpers
             } while (EnteredNumber > biggestNumber || EnteredNumber < smallestNumber);
             return EnteredNumber;
         }
+        public static double CheckNumberDouble(double smallestNumber, double biggestNumber)
+        {
+            double EnteredNumber = 0.00;
+            do
+            {
+                double.TryParse(Console.ReadLine(), out EnteredNumber);
+            } while (EnteredNumber > biggestNumber || EnteredNumber < smallestNumber);
+            return EnteredNumber;
+        }
         public static int CheckBuyerOrSeller()
         {
             Console.WriteLine("Zelite li se prijaviti kao kupac ili kao prodavac: \n1 - Kupac \n2 - Prodavac");
@@ -141,6 +150,17 @@ namespace Internship_4_MarketplaceApp.Presentation.Helpers
             if (choice == 1)
                 return true;
             return false;
+        }
+        public static DateTime NewDate()
+        {
+            DateTime Date;
+            bool correct = DateTime.TryParse(Console.ReadLine(), out Date);
+            while (!correct)
+            {
+                Console.WriteLine("Neispavan unos datuma, pokušajte ponovo: (YYYY-MM-DD)");
+                correct = DateTime.TryParse(Console.ReadLine(), out Date);
+            }
+            return Date;
         }
     }
 }

@@ -47,7 +47,9 @@
     <Compile Include="Actions\HomePage\Registar\Registar.cs" />
     <Compile Include="Actions\MainMenu\ShowMenu\MainMenu.cs" />
     <Compile Include="Actions\MainMenu\ShowMenu\MenuBuyer.cs" />
+    <Compile Include="Actions\MainMenu\ShowMenu\MenuSeller.cs" />
     <Compile Include="Helpers\MenuBuyerHelpers.cs" />
+    <Compile Include="Helpers\MenuSellerHelpers.cs" />
     <Compile Include="Helpers\Returners.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

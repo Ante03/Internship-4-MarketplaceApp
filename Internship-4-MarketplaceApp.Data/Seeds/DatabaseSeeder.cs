@@ -26,11 +26,11 @@ namespace Internship_4_MarketplaceApp.Data.Seeds
 
         public static readonly List<Item> Items = new List<Item>
             {
-                new Item("Mobitel", "Samsung Galaxy S24", 700, ItemCategory.Electronics, Sellers[0]),
-                new Item("Zimska jakna", "Zimska jakna s kapom i vunom", 120, ItemCategory.Clothes, Sellers[0]),
-                new Item("Hamlet", "Stara knjiga", 50, ItemCategory.Books, Sellers[1]),
-                new Item("Pizza", "Mijesana pizza", 10, ItemCategory.Food, Sellers[2]),
-                new Item("Coca-cola", "Sok", 50, ItemCategory.Drinks, Sellers[1])
+                new Item("Mobitel", "Samsung Galaxy S24", 700.00, ItemCategory.Electronics, Sellers[0]),
+                new Item("Zimska jakna", "Zimska jakna s kapom i vunom", 120.00, ItemCategory.Clothes, Sellers[0]),
+                new Item("Hamlet", "Stara knjiga", 50.00, ItemCategory.Books, Sellers[1]),
+                new Item("Pizza", "Mijesana pizza", 10.00, ItemCategory.Food, Sellers[2]),
+                new Item("Coca-cola", "Sok", 50.00, ItemCategory.Drinks, Sellers[1])
         };
 
         public static readonly List<Transaction> Transactions = new List<Transaction>

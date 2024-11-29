@@ -21,7 +21,7 @@ namespace Internship_4_MarketplaceApp.Presentation.Actions.HomePage.Login
             }
             else if (user is Seller)
             {
-                Console.WriteLine("Seellll");
+                MenuSeller.SellerOptions(marketplace, (Seller)user);
             }
             else 
             {

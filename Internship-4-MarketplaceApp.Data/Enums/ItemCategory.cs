@@ -12,7 +12,6 @@ namespace Internship_4_MarketplaceApp.Data.Enums
         Clothes,
         Books,
         Food,
-        Drinks,
-        Other
+        Drinks
     }
 }
