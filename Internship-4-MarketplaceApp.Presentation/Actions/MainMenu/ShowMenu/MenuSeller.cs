@@ -1,10 +1,6 @@
 ﻿using Internship_4_MarketplaceApp.Data.Entities.Models;
 using Internship_4_MarketplaceApp.Data.Entities;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Internship_4_MarketplaceApp.Presentation.Helpers;
 
 namespace Internship_4_MarketplaceApp.Presentation.Actions.MainMenu.ShowMenu
