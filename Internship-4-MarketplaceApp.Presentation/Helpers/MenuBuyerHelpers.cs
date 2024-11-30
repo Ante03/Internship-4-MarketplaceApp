@@ -48,7 +48,7 @@ namespace Internship_4_MarketplaceApp.Presentation.Helpers
                             Console.WriteLine("Jeste sigurni da zelite obaviti kupnju: ");
                             if (Returners.CheckYesOrNo())
                             {
-                                MenuBuyerFunctions.MakeSale(item, buyer, marketplace, CodeFromCoupon);
+                                TransactionRepository.MakeSale(item, buyer, marketplace, CodeFromCoupon);
                                 Console.WriteLine($"Uspjesno obavljena kupnja proizvoda '{item.Name}'!");
                                 counter++;
                                 break;
@@ -70,7 +70,7 @@ namespace Internship_4_MarketplaceApp.Presentation.Helpers
                     Console.WriteLine("Jeste sigurni da zelite obaviti kupnju: ");
                     if (Returners.CheckYesOrNo())
                     {
-                        MenuBuyerFunctions.MakeSale(item, buyer, marketplace);
+                        TransactionRepository.MakeSale(item, buyer, marketplace);
                         Console.WriteLine($"Uspjesno obavljena kupnja proizvoda '{item.Name}'!");
                     }
                     else
@@ -112,7 +112,7 @@ namespace Internship_4_MarketplaceApp.Presentation.Helpers
             Console.WriteLine("Jeste sigurni da zelite vratite proizvod: ");
             if (Returners.CheckYesOrNo())
             {
-                MenuBuyerFunctions.ReturnItem(item, buyer, marketplace, transactionToRemove);
+                TransactionRepository.ReturnItem(item, buyer, marketplace, transactionToRemove);
                 Console.WriteLine("Proizvod uspjesno vracen!");
             }
             else

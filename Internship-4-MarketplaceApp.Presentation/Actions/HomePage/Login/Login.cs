@@ -19,7 +19,7 @@ namespace Internship_4_MarketplaceApp.Presentation.Actions.HomePage.Login
             {
                 MenuBuyer.BuyerOptions(marketplace, (Buyer)user);
             }
-            else if (user is Seller)
+            else if (user is Seller && name.ToLower() == user.UserName.ToLower())
             {
                 MenuSeller.SellerOptions(marketplace, (Seller)user);
             }

@@ -45,8 +45,8 @@
   <ItemGroup>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Repositorioes\MenuBuyerFunctions.cs" />
-    <Compile Include="Repositorioes\MenuSellerFunctions.cs" />
+    <Compile Include="Repositorioes\ItemRepository.cs" />
+    <Compile Include="Repositorioes\TransactionRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

@@ -1,6 +1,5 @@
 ﻿using Internship_4_MarketplaceApp.Data.Entities;
 using Internship_4_MarketplaceApp.Data.Entities.Models;
-using Internship_4_MarketplaceApp.Domain.Repositorioes;
 using Internship_4_MarketplaceApp.Presentation.Helpers;
 using System;
 
@@ -14,7 +13,6 @@ namespace Internship_4_MarketplaceApp.Presentation.Actions.MainMenu.ShowMenu
             var choice = -1;
             while (choice != 0) 
             {
-                Console.WriteLine(buyer.StartingMoney);
                 Console.WriteLine("Odaberite:\n1 - Pregled svih artikala\n2 - Napravi kupnju \n3 - Povratak proizvoda \n4 - Dodaj u omiljene \n5 - Prikazi povijest \n6 - Prikazi favorite \n7 - izlaz");
                 choice = Returners.CheckNumber(1, 7);
                 switch (choice) { 

@@ -69,7 +69,7 @@ namespace Internship_4_MarketplaceApp.Presentation.Helpers
                 Console.WriteLine("Odustali od brisanja");
                 return;
             }
-            MenuSellerFunctions.MakeItem(nameOfItem, descriptionOfItem, priceOfItem, categoryOfItem, seller, marketplace);
+            ItemRepository.MakeItem(nameOfItem, descriptionOfItem, priceOfItem, categoryOfItem, seller, marketplace);
             Console.WriteLine("Uspjesno dodan novi proizvod!");
         } 
 
@@ -153,7 +153,7 @@ namespace Internship_4_MarketplaceApp.Presentation.Helpers
                 Console.Write("Unesite ponovo pocetni datum: ");
                 endDate = Returners.NewDate();
             }
-            var earnings = MenuSellerFunctions.FindEarnings(startDate, endDate, seller, marketplace);
+            var earnings = TransactionRepository.FindEarnings(startDate, endDate, seller, marketplace);
             Console.WriteLine($"Ukupna zarada izmedu {startDate.ToString("dd/MM/yyyy")} i {endDate.ToString("dd/MM/yyyy")} je {earnings}$");
         }
 
